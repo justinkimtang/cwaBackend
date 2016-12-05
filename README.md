@@ -1,5 +1,5 @@
 # Volunteer Scheduler Backend
 ## Includes MySQLdb files and Flask application files
 Folders
-* backend
-* flask
+* database scripts
+* flask application
