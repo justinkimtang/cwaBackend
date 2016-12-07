@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <!-- <meta name="viewport" content="width = device-width, initial-scale=1.0"> -->
+            <title>VMS Login</title>
+            <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/vms-styles.css') }}" >
+                   
+                </head>
+
+                <body>
+                    
+                <body class = "home">
+
+
+                        <div class="head center">
+                                            <div class = "container">
+                                                                    <header>
+                                                                                                <h1> Home Page </h1>
+                                                                                                                </header>
+
+                                                                                                                                <nav>
+                                                                                                                                                            <ul>
+                                                                                                                                                                                        <li><a href = "#">List 1</a></li>
+                                                                                                                                                                                                            <li><a href = "#">List 2</a></li>
+                                                                                                                                                                                                                                <li><a href = "#">List 3</a></li>
+                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                    </nav>
+                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                                                                                                                <div class = "content center">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+</div><!-- #content -->
+        
+        <footer class= "center">
+                            <div class = "container">
+                                                    <h2>Contact Info</h2>
+                                                                </div>
+                                                                        </footer><!-- #footer -->
+                                                                            
+                                                                        </body> 
+
+

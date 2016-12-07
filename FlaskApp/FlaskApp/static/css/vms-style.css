@@ -1,0 +1,140 @@
+/* universal styles */
+*,
+*:before,
+*:after {
+            margin:0;
+                padding:0;
+                    -moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                            box-sizing: border-box;
+                    }
+
+                    .clearfix:after {
+                                display: table;
+                                    content: " ";
+                                        clear: both;
+                                }
+
+                                /* global styles */
+
+                                ul li {
+                                            list-style-type: none;
+                                    }
+
+                                    a {
+                                                text-decoration: none;
+                                        }
+
+                                        img {
+                                                    border:0;
+                                            }
+
+                                            .hide {
+                                                        display: none;
+                                                }
+
+                                                .left {
+                                                            float:left;
+                                                    }
+
+                                                    .right {
+                                                                float: right;
+                                                        }
+
+                                                        .center {
+                                                                    text-align: center;
+                                                            }
+
+                                                            .container {
+                                                                        max-width: 960px;
+                                                                            margin: 0 auto;
+                                                                    }
+
+                                                                    html,
+                                                                    body {
+                                                                            /*  margin:0;
+                                                                                padding:0;*/
+    height:100%;
+    }
+    .home {
+                font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif;
+                    background-color: #f1f1f1;
+            }
+            .home a {
+                        color: grey;
+                            transition: all 1000ms ease;
+                    }
+                    .home a:hover {
+                                color: blue;    
+                        }
+
+                        .head{
+                                    background-color: #333;
+                                        color: white;
+                                            padding-top: 20px;
+                                                height: 120px;
+                                                    margin-bottom: 30px;
+                                            }
+
+                                            .head header{
+                                                        margin-bottom: 15px;
+                                                }
+
+                                                .head nav ul {
+                                                            width: 100%;
+                                                    }
+                                                    .head nav ul li {
+                                                                margin-bottom: 8px;
+                                                                    /*font-size: 17px;*/
+                                                                    display: inline-block;
+                                                                        /*margin: 0% 5%;*/
+                                                            }
+                                                            .head nav a {
+                                                                        padding: 10px;
+                                                                }
+                                                                .head nav a:hover, .hhead nav a:active{
+                                                                            color: white;
+                                                                    }
+                                                                    .content{
+                                                                                   position: absolute;
+                                                                                          top: 120px; /* Header Height */
+                                                                                                 bottom: 100px; /* Footer Height */
+                                                                                                        width: 100%;
+                                                                                                               background-color: #f1f1f1;
+                                                                                                       }
+
+                                                                                                       .main-content{
+                                                                                                                background-color: #f8f8f8;
+                                                                                                                    height: 100%;
+                                                                                                                        padding-top: 30px;
+                                                                                                                }
+
+                                                                                                                #home-page {
+                                                                                                                            font-size: 3em;
+                                                                                                                    }
+
+                                                                                                                    .main-content div a:hover, a:active:{
+                                                                                                                                background-color: blue;
+                                                                                                                        }
+
+                                                                                                                        #response {
+                                                                                                                                    color: red;
+                                                                                                                            }
+
+                                                                                                                            footer {
+                                                                                                                                        width:100%;
+                                                                                                                                            height:100px;
+                                                                                                                                                position:absolute;
+                                                                                                                                                    bottom:0;
+                                                                                                                                                        left:0;
+                                                                                                                                                            padding-top: 20px;
+
+                                                                                                                                                                background-color: #333;
+                                                                                                                                                                    color: white;
+                                                                                                                                                            }
+
+
+
+
+
+
