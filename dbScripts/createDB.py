@@ -1,6 +1,6 @@
 import MySQLdb
 import getpass
-from script_create import TABLES, TABLES2
+from  import tableSQL TABLES, TABLES2
 
 def create_database():
         password = getpass.getpass("Input mysql password:")
