@@ -16,13 +16,15 @@ def login_page():
         if request.method =='POST':
             attempted_username = request.form['username']
             attempted_password = request.form['password']
+            hashed = bcrypt.hashpw(str(attempted_password),bcrypt.gensalt())
             
             try:
                 c, conn = connection()
                 c.execute("SELECT password FROM users WHERE username=%s OR email=%s",[attempted_username, attempted_username])
                 for password in c:
                     p = ("{}".join(password))
-                    if p == attempted_password:
+
+                    if p == bcrypt.hashpw(str(attempted_password),p):
                          return redirect(url_for('dashboardpage'))
                     else:
                          flash('invalid password')
@@ -54,12 +56,13 @@ def sign_up_page():
             attempted_email = request.form['email']
             attempted_firstname = request.form['first_name']
             attempted_lastname = request.form['last_name']
+            hashed = bcrypt.hashpw(str(attempted_password),bcrypt.gensalt())
 
             try:
                 c, conn = connection()
                 c.execute("SELECT username FROM users WHERE username=%s UNION SELECT email FROM users WHERE email=%s",[attempted_username,attempted_email])
                 if c.rowcount == 0:
-                    c.execute("INSERT INTO users(username,password,email,first_name,last_name) VALUES(%s,%s,%s,%s,%s)",[attempted_username,attempted_password,attempted_email,attempted_firstname,attempted_lastname])
+                    c.execute("INSERT INTO users(username,password,email,first_name,last_name) VALUES(%s,%s,%s,%s,%s)",[attempted_username,hashed,attempted_email,attempted_firstname,attempted_lastname])
                     conn.commit()
                     return redirect(url_for('dashboardpage'))
                 else:
