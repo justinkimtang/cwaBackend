@@ -1,5 +1,5 @@
 Python Scripts For CWA tables
-**************************************************************************************************************
+--------------------------------------------------------------------------------------------------------------
 
 Before running any of these MySQL must be installed on the machine
 To get mysql type:
@@ -7,8 +7,7 @@ To get mysql type:
 2)type yes(Y) for the download
 3)set up a root password
 
-**************************************************************************************************************
-
+--------------------------------------------------------------------------------------------------------------
 FILES INCLUDED (TO RUN type "python _fileName_" then type mysql db password)
 createDB.py  -creates the cwa database using dictionary in tableSQL.py
 deleteDB.py  -will delete the cwa database removing all entrys and tables
@@ -19,15 +18,13 @@ show_tablesDB.py -will show all tables in the database
 #Then replace passwd in cnx ='your password'
 #This way you don't have to always enter your password to use the files
 
-**************************************************************************************************************
-
+--------------------------------------------------------------------------------------------------------------
 To enter mysql db from the machine:
 1)Enter: mysql -u root -p
 2)enter your password
 3)Run sql commands
 
-**************************************************************************************************************
-
+----------------------------------------------------------------------------------------------------------------
 Basic Commands
 SHOW DATABSES; -shows all databaes in root(there will be a few default ones)
 USE _dbName_;  -switch to and work in the dbName given
@@ -37,7 +34,7 @@ SHOW COLUMNS FROM _tableName_; -List all feilds in tableName and show their valu
 CREATE TABLE _tableNAME (varibale1 type1, variable2, type2....) -create a table with given variables
 DROP _tableName_ -remove a table from the database
 
-SELECT * FROM _tableName_; -show all(*) entrys in the tableName
+SELECT * FROM _tableName_; -show all(-) entrys in the tableName
 SELECT_feild_ FROM _tableName_ WHERE _feild2_ _comparison_ -show all feilds where a specific conditon is met eg. SELECT name FROM users WHERE age > 5;
 
 INSERT INTO _tableName_(feild1,feild2...) VALUES(value1,value2...); -Insert in to the tableName

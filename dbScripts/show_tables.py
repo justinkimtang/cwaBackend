@@ -2,7 +2,7 @@ import MySQLdb
 import getpass
 
 password = getpass.getpass("Input mysql password:")
-cnx = MySQLdb.connect(user='root', passwd = 'password', db = 'cwatest')
+cnx = MySQLdb.connect(user='root', passwd = password, db = 'cwatest')
 cursor = cnx.cursor()
 try:
         cursor.execute("SHOW TABLES")

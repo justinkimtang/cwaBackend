@@ -1,5 +1,5 @@
 import MySQLdb
-
+#Two dictionaries because create script hashes names and will create them out of order
 TABLES = {}
 TABLES2 = {}
 
@@ -210,7 +210,7 @@ TABLES2['VMS_job_assignments'] = (
 " PRIMARY KEY (job_id,assigned_number),"
 " CONSTRAINT job_id_job_assignments"
 " FOREIGN KEY (job_id)"
-" REFERENCES VMS_job_instance (job_id)"
+" REFERENCES VMS_job_instances (job_id)"
 " ON DELETE NO ACTION"
 " ON UPDATE NO ACTION,"
 " CONSTRAINT person_id_job_assignments"
@@ -220,8 +220,8 @@ TABLES2['VMS_job_assignments'] = (
 " ON UPDATE NO ACTION"
 ") ENGINE=InnoDB DEFAULT CHARSET=utf8")
 
-TABLES2['VMS_job_instance'] = (
-"CREATE TABLE IF NOT EXISTS VMS_job_instance ("
+TABLES2['VMS_job_instances'] = (
+"CREATE TABLE IF NOT EXISTS VMS_job_instances ("
 " job_id int(11) NOT NULL AUTO_INCREMENT,"
 " job_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP"
 " ON UPDATE CURRENT_TIMESTAMP,"
@@ -230,8 +230,8 @@ TABLES2['VMS_job_instance'] = (
 " job_discription varchar(200) DEFAULT NULL,"
 " volunteers_needed int(11) NOT NULL,"
 " PRIMARY KEY (job_id),"
-" KEY job_type_id_job_instance (job_type_id),"
-" CONSTRAINT job_type_id_job_instance"
+" KEY job_type_id_job_instances (job_type_id),"
+" CONSTRAINT job_type_id_job_instances"
 " FOREIGN KEY (job_type_id)"
 " REFERENCES VMS_job_types (job_type_id)"
 " ON DELETE NO ACTION"
@@ -291,11 +291,10 @@ TABLES['VMS_persons'] = (
 " person_id int(11) NOT NULL AUTO_INCREMENT,"
 " first_name varchar(30) NOT NULL,"
 " last_name varchar(30) NOT NULL,"
-" user_name varchar(30) NOT NULL,"
+" username varchar(30) NOT NULL,"
 " email varchar(60) NOT NULL,"
 " phone varchar(30) NOT NULL,"
-" password_hash varchar(60) NOT NULL,"
-" password_salt int(11) NOT NULL,"
+" password varchar(60) NOT NULL,"
 " admin_status tinyint(1) NOT NULL DEFAULT 0,"
 " alum tinyint(1) NOT NULL DEFAULT 0,"
 " graduation_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP"

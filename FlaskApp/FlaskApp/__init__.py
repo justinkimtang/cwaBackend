@@ -20,7 +20,7 @@ def login_page():
             
             try:
                 c, conn = connection()
-                c.execute("SELECT password FROM users WHERE username=%s OR email=%s",[attempted_username, attempted_username])
+                c.execute("SELECT password FROM VMS_persons WHERE username=%s OR email=%s",[attempted_username, attempted_username])
                 for password in c:
                     p = ("{}".join(password))
 
@@ -60,9 +60,9 @@ def sign_up_page():
 
             try:
                 c, conn = connection()
-                c.execute("SELECT username FROM users WHERE username=%s UNION SELECT email FROM users WHERE email=%s",[attempted_username,attempted_email])
+                c.execute("SELECT username FROM VMS_persons WHERE username=%s UNION SELECT email FROM VMS_persons WHERE email=%s",[attempted_username,attempted_email])
                 if c.rowcount == 0:
-                    c.execute("INSERT INTO users(username,password,email,first_name,last_name) VALUES(%s,%s,%s,%s,%s)",[attempted_username,hashed,attempted_email,attempted_firstname,attempted_lastname])
+                    c.execute("INSERT INTO VMS_persons(username,password,email,first_name,last_name) VALUES(%s,%s,%s,%s,%s)",[attempted_username,hashed,attempted_email,attempted_firstname,attempted_lastname])
                     conn.commit()
                     return redirect(url_for('dashboardpage'))
                 else:
