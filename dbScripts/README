@@ -1,24 +1,18 @@
 Python Scripts For CWA tables
 --------------------------------------------------------------------------------------------------------------
 
+-Folders
+*create > contains create and delete scripts along with sql create dicitonary
+*query > contains example insertions deletions and querys to the database
+
+_______________________________________________________________________________________________________________
+
 Before running any of these MySQL must be installed on the machine
 To get mysql type:
 1)sudo apt-get install mysql-server
 2)type yes(Y) for the download
 3)set up a root password
 
---------------------------------------------------------------------------------------------------------------
-FILES INCLUDED (TO RUN type "python _fileName_" then type mysql db password)
-createDB.py  -creates the cwa database using dictionary in tableSQL.py
-deleteDB.py  -will delete the cwa database removing all entrys and tables
-tableSQL.py  -python dictionary containing SQL for creating DB
-show_tablesDB.py -will show all tables in the database
-
-#In createDB, deleteDB and show_tables comment out "password = getpass.getpass()" with #
-#Then replace passwd in cnx ='your password'
-#This way you don't have to always enter your password to use the files
-
---------------------------------------------------------------------------------------------------------------
 To enter mysql db from the machine:
 1)Enter: mysql -u root -p
 2)enter your password

@@ -1,0 +1,8 @@
+FILES INCLUDED (TO RUN type "python _fileName_" then type mysql db password)
+-----------------------------------------------------------------------------
+*createDB.py  -creates the cwa database using dictionary in tableSQL.py
+*deleteDB.py  -will delete the cwa database removing all entrys and tables
+*tableSQL.py  -python dictionary containing SQL for creating DB
+
+#comment out get_pass and in the connect statment replace password with you actual password to auto run
+
