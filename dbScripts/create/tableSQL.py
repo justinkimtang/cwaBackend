@@ -201,8 +201,8 @@ TABLES['person'] = (
 " ON UPDATE NO ACTION"
 ") ENGINE=InnoDB AUTO_INCREMENT=14793 DEFAULT CHARSET=utf8")
 
-TABLES2['VMS_job_assignments'] = (
-"CREATE TABLE IF NOT EXISTS VMS_job_assignments ("
+TABLES2['VMS_jobs'] = (
+"CREATE TABLE IF NOT EXISTS VMS_jobs ("
 " job_id int(11) NOT NULL,"
 " assigned_number int(11) NOT NULL,"
 " person_id int(11) NOT NULL,"

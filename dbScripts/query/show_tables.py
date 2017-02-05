@@ -7,6 +7,7 @@ cursor = cnx.cursor()
 try:
         cursor.execute("SHOW TABLES")
         tables = cursor.fetchall()
+        
 except MySQLdb.Error as err:
         print(err)
 else:
