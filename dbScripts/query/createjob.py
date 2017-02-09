@@ -1,24 +1,34 @@
 #Example job creation
 import MySQLdb
+import getpass
 from dbconnect import connection
 
 
 c, conn = connection()
 
-job_id = job_id
-job_time = job_time
-location = location
-volunteers_needed = volunteers_needed
+job_type_id = int(float(getpass.getpass("Input  job type id:")))
+#job_time = getpass.getpass("Input job time:")
+location = getpass.getpass("Input location:")
+job_description = getpass.getpass("Input job description:")
+volunteers_needed = int(float(getpass.getpass("Input # of volunteers:")))
 
 
 try:
 	# create on general instance of the job 
-	c.execute("INSERT INTO VMS_job_instances(job_type_id,job_time,location,volunteers_needed) VALUES(%s,%s,%s,%s)",  \
-		job_id,job_time,location,volunteers_needed)
+	c.execute("INSERT INTO VMS_job_instances(job_type_id,location,job_description,volunteers_needed) VALUES(%d,%s,%s,%d)" % \
+		(job_type_id,location,job_description,volunteers_needed))
+		
 	
-	# create a specific assingment for each volunteer needed	
+	c.execute("SELECT job_id from VMS_job_instances WHERE location=%s AND job_description=%s",  \
+		[location,job_description])		
+	for fetch_id in c:
+                    jobid = fetch_id
+	
+	print jobid
+	# create a specific assingment for each volunteer needed (no person assigned 	
 	for x in range(0,volunteers_needed):
-		c.execute("INSERT INTO VMS_job_assignments(assignment_id,person_id,job_id) VALUES(%s,-1,%s)"
+		c.execute("INSERT INTO VMS_job_assignments(person_id,job_id) VALUES(-1,%s)" % jobid)
+	
 		
         
 except MySQLdb.Error as err:
